@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrackMate Case Study</title>
+  
+  <!-- Styles (assuming Vite or similar build tool will process this, otherwise link to main.css) -->
+  <link rel="stylesheet" href="./src/styles/main.scss">
+  
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <!-- Main Application Script -->
+  <script type="module" src="./src/scripts/app.js" defer></script>
+</head>
+<body>
+
+  <!-- WebGL Background Container -->
+  <div id="webgl-container" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;"></div>
+
+  <!-- Smooth Scrolling Wrapper -->
+  <main id="smooth-wrapper">
+    <div id="smooth-content">
+      
+      <!-- CHAPTER 00 -->
+      <section id="chapter-00" class="tm-chapter min-h-screen flex flex-col justify-center items-center relative z-10">
+        <!-- Accessibility / UX -->
+        <button id="btn-skip-intro" class="absolute top-8 right-8 text-tm-sapphire-light text-sm tm-glass-card px-4 py-2 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-tm-gold">
+          Skip Intro
+        </button>
+
+        <!-- Hero Content -->
+        <div class="intro-content text-center opacity-0">
+          <div class="tm-logo-mark mb-6">
+            <!-- Placeholder for SVG Logo -->
+            <div class="w-16 h-16 rounded-full border-2 border-tm-gold shadow-[0_0_30px_rgba(255,179,0,0.3)] mx-auto"></div>
+          </div>
+          <h1 class="text-tm-gold font-bold uppercase tracking-widest text-4xl md:text-6xl mb-4">TrackMate</h1>
+          <p class="text-tm-sapphire-light text-lg md:text-xl font-medium tracking-wide mb-12">Intentional, Consent-Driven Location Sharing.</p>
+          
+          <div class="scroll-indicator animate-bounce text-tm-sapphire-light opacity-70">
+            <span class="block text-xs uppercase tracking-[0.2em] mb-2">Explore the Architecture</span>
+            <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 01 -->
+      <section id="chapter-01" class="tm-chapter min-h-screen flex items-center justify-center relative z-10 px-6 py-20">
+        <div class="max-w-7xl mx-auto w-full relative">
+          
+          <!-- Section Header -->
+          <div class="text-center mb-16 ch1-header opacity-0">
+            <span class="text-tm-sapphire-light uppercase tracking-widest text-sm font-bold mb-2 block">01 &mdash; The Philosophy</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-white">Rethinking Location Telemetry.</h2>
+          </div>
+
+          <!-- Split Screen Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative">
+            
+            <!-- Central Divider (Desktop only) -->
+            <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-tm-sapphire-light to-transparent opacity-30 ch1-divider origin-top scale-y-0"></div>
+
+            <!-- Left: Traditional Model -->
+            <div class="trad-card tm-glass-card p-8 md:p-10 border-t-2 border-tm-warning-amber opacity-0 translate-y-12">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-3 h-3 rounded-full bg-tm-warning-amber shadow-[0_0_15px_rgba(255,160,0,0.6)]"></div>
+                <h3 class="text-tm-warning-amber text-xl md:text-2xl font-bold">Legacy Models</h3>
+              </div>
+              <p class="text-white/70 text-lg mb-8">Many tracking experiences rely on persistent, unrestricted sharing models. Users frequently grant perpetual access once, resulting in continuous background surveillance.</p>
+              <ul class="space-y-4 text-sm text-tm-sapphire-light font-mono">
+                <li class="flex items-center gap-3"><span>&times;</span> Indefinite Sessions</li>
+                <li class="flex items-center gap-3"><span>&times;</span> High Battery Drain</li>
+                <li class="flex items-center gap-3"><span>&times;</span> Opaque Background Telemetry</li>
+              </ul>
+            </div>
+
+            <!-- Right: TrackMate Paradigm -->
+            <div class="tm-card tm-glass-card p-8 md:p-10 border-t-2 border-tm-gold opacity-0 translate-y-12">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-3 h-3 rounded-full bg-tm-gold shadow-[0_0_15px_rgba(255,179,0,0.6)]"></div>
+                <h3 class="text-tm-gold text-xl md:text-2xl font-bold">The TrackMate Paradigm</h3>
+              </div>
+              <p class="text-white/90 text-lg mb-8">Location data is treated as an explicit, ephemeral, and revocable action. Telemetry is strictly time-bound and remains entirely within the user's control.</p>
+              <ul class="space-y-4 text-sm text-tm-gold font-mono">
+                <li class="flex items-center gap-3"><span>&check;</span> Granular Time Windows</li>
+                <li class="flex items-center gap-3"><span>&check;</span> Hardware-Level Kill-Switch</li>
+                <li class="flex items-center gap-3"><span>&check;</span> Zero Passive Tracking</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 02 -->
+      <section id="chapter-02" class="tm-chapter min-h-screen flex flex-col items-center justify-center relative z-10 px-6 py-20 overflow-hidden">
+        
+        <div class="text-center mb-16 ch2-header opacity-0">
+          <span class="text-tm-sapphire-light uppercase tracking-widest text-sm font-bold mb-2 block">02 &mdash; Security Architecture</span>
+          <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Connection <span class="text-tm-emergency-crimson opacity-80">≠</span> Permission</h2>
+          <p class="text-white/70 max-w-2xl mx-auto">In TrackMate, being friends or joining a group does not grant location access. The social layer is structurally isolated from the telemetry layer.</p>
+        </div>
+
+        <!-- 3D Isometric Container -->
+        <div class="relative w-full max-w-3xl h-[500px] flex items-center justify-center ch2-scene" style="perspective: 1200px;">
+          
+          <!-- Isometric Wrapper -->
+          <div class="relative w-full max-w-md aspect-square transform-style-3d ch2-iso-wrapper" style="transform-style: preserve-3d; transform: rotateX(60deg) rotateZ(-45deg);">
+            
+            <!-- Layer 1: Location Telemetry (Bottom) -->
+            <div class="absolute inset-0 tm-glass-card border-2 border-tm-active-green flex items-center justify-center layer-location opacity-0">
+              <div class="text-center transform" style="transform: rotateZ(45deg) rotateX(-60deg);">
+                <div class="w-12 h-12 rounded-full bg-tm-active-green/20 border border-tm-active-green mx-auto mb-2 flex items-center justify-center shadow-[0_0_20px_rgba(0,230,118,0.4)]">
+                  <svg class="w-6 h-6 text-tm-active-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.242-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <span class="text-tm-active-green font-mono font-bold tracking-widest uppercase text-sm">Telemetry Layer</span>
+              </div>
+            </div>
+
+            <!-- Layer 2: The Consent Gate (Middle) -->
+            <div class="absolute inset-0 flex items-center justify-center layer-gate opacity-0">
+              <div class="w-full h-full border-2 border-dashed border-tm-emergency-crimson/50 rounded-2xl flex items-center justify-center bg-tm-emergency-crimson/5 backdrop-blur-sm">
+                 <div class="transform" style="transform: rotateZ(45deg) rotateX(-60deg);">
+                    <span class="text-tm-emergency-crimson font-bold tracking-widest uppercase text-xs bg-tm-color-deep-void px-3 py-1 rounded-full border border-tm-emergency-crimson">Explicit Consent Required</span>
+                 </div>
+              </div>
+            </div>
+
+            <!-- Layer 3: Social Connection (Top) -->
+            <div class="absolute inset-0 tm-glass-card border-2 border-tm-sapphire flex items-center justify-center layer-social opacity-0">
+              <div class="text-center transform" style="transform: rotateZ(45deg) rotateX(-60deg);">
+                <div class="w-12 h-12 rounded-full bg-tm-sapphire/20 border border-tm-sapphire mx-auto mb-2 flex items-center justify-center shadow-[0_0_20px_rgba(30,136,229,0.4)]">
+                  <svg class="w-6 h-6 text-tm-sapphire-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </div>
+                <span class="text-tm-sapphire-light font-mono font-bold tracking-widest uppercase text-sm">Social Layer</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 03 -->
+      <section id="chapter-03" class="tm-chapter min-h-screen flex flex-col items-center justify-center relative z-10 px-6 py-20">
+        
+        <div class="text-center mb-16 ch3-header opacity-0">
+          <span class="text-tm-sapphire-light uppercase tracking-widest text-sm font-bold mb-2 block">03 &mdash; Core Capabilities</span>
+          <h2 class="text-3xl md:text-5xl font-bold text-white">Engineered for Safety.</h2>
+        </div>
+
+        <!-- Bento Grid Container -->
+        <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 ch3-bento-grid">
+          
+          <!-- Cell 1: Timed Sharing (Span 2 Columns) -->
+          <div class="bento-item md:col-span-2 tm-glass-card p-8 group relative overflow-hidden flex flex-col justify-between min-h-[300px] opacity-0 translate-y-12">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-tm-gold/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 transition-transform duration-700 group-hover:scale-150"></div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-bold text-tm-gold mb-2">Ephemeral Consent</h3>
+              <p class="text-white/70 max-w-md">Sharing sessions are strictly time-bound (e.g., 15m, 1h, 8h). When the timer expires, the backend automatically purges the location stream.</p>
+            </div>
+            <!-- Mock UI Element -->
+            <div class="relative z-10 mt-8 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full border-4 border-tm-gold/30 border-t-tm-gold animate-[spin_3s_linear_infinite] flex items-center justify-center">
+                <span class="text-xs text-tm-gold font-mono">14:59</span>
+              </div>
+              <div class="px-4 py-2 bg-tm-emergency-crimson/20 border border-tm-emergency-crimson rounded-full text-tm-emergency-crimson text-xs font-bold tracking-widest uppercase cursor-pointer hover:bg-tm-emergency-crimson hover:text-white transition-colors">
+                Kill-Switch
+              </div>
+            </div>
+          </div>
+
+          <!-- Cell 2: SOS Emergency -->
+          <div class="bento-item tm-glass-card p-8 group relative overflow-hidden min-h-[300px] opacity-0 translate-y-12">
+             <div class="absolute inset-0 bg-gradient-to-br from-tm-emergency-crimson/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+             <div class="h-full flex flex-col items-center justify-center text-center relative z-10">
+               <div class="w-20 h-20 rounded-full bg-tm-color-deep-void border border-tm-emergency-crimson/50 shadow-[0_0_0_0_rgba(255,23,68,0)] group-hover:shadow-[0_0_30px_10px_rgba(255,23,68,0.3)] transition-shadow duration-700 flex items-center justify-center mb-6">
+                  <span class="text-tm-emergency-crimson font-bold text-xl tracking-widest">SOS</span>
+               </div>
+               <h3 class="text-xl font-bold text-white mb-2">3-Second Hold</h3>
+               <p class="text-white/60 text-sm">Heavy haptic gated activation to prevent pocket misfires.</p>
+             </div>
+          </div>
+
+          <!-- Cell 3: Private Chat -->
+          <div class="bento-item tm-glass-card p-8 group relative overflow-hidden min-h-[300px] opacity-0 translate-y-12">
+            <div class="h-full flex flex-col relative z-10">
+               <h3 class="text-xl font-bold text-tm-sapphire-light mb-2">Private Messaging</h3>
+               <p class="text-white/60 text-sm mb-6">Firebase-authenticated, 60FPS optimized local chat.</p>
+               <!-- Mock Bubbles -->
+               <div class="flex-1 flex flex-col justify-end gap-3">
+                  <div class="self-start bg-tm-color-deep-void border border-tm-border-glass px-4 py-2 rounded-2xl rounded-tl-none text-sm text-white/80 transform origin-bottom-left transition-transform duration-300 group-hover:scale-105">Are you close?</div>
+                  <div class="self-end bg-tm-sapphire text-white px-4 py-2 rounded-2xl rounded-tr-none text-sm shadow-[0_0_15px_rgba(30,136,229,0.3)] transform origin-bottom-right transition-transform duration-300 group-hover:scale-105">Just entered the Safe Zone.</div>
+               </div>
+            </div>
+          </div>
+
+          <!-- Cell 4: 3D Map Markers (Span 2 Columns) -->
+          <div class="bento-item md:col-span-2 tm-glass-card p-8 group relative overflow-hidden min-h-[300px] opacity-0 translate-y-12">
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tm-color-sapphire-light)_1px,_transparent_1px)] [background-size:24px_24px] transition-opacity duration-500 group-hover:opacity-40"></div>
+            <div class="relative z-10 h-full flex flex-col md:flex-row items-center gap-8">
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-white mb-2">Custom Canvas Markers</h3>
+                <p class="text-white/70">Replaced default map pins with procedurally generated Solar Gold teardrop markers using Dart's PictureRecorder, bypassing heavy 3D mesh loads for 60FPS rendering.</p>
+              </div>
+              <div class="w-32 h-32 relative flex-shrink-0">
+                <!-- Mock Golden Pin -->
+                <div class="absolute inset-0 bg-gradient-to-br from-tm-gold-highlight to-tm-gold rounded-full rounded-br-none transform rotate-45 border-2 border-white/20 shadow-[10px_10px_30px_rgba(255,179,0,0.4)] transition-transform duration-500 group-hover:-translate-y-4">
+                   <div class="absolute inset-0 m-auto w-8 h-8 bg-tm-color-deep-void rounded-full border border-tm-gold-highlight/50 shadow-inner"></div>
+                </div>
+                <!-- Pin Shadow -->
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-4 bg-black/50 blur-md rounded-full transition-all duration-500 group-hover:w-12 group-hover:opacity-30"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Chapter 04: Engineering Verification -->
+      <section id="chapter-04" class="tm-chapter min-h-[60vh] flex flex-col items-center justify-center relative z-10 px-6 py-20">
+        
+        <div class="w-full max-w-4xl tm-glass-card border-t-2 border-tm-sapphire-light p-10 md:p-16 text-center ch4-container opacity-0 translate-y-12">
+          <span class="text-tm-sapphire-light uppercase tracking-widest text-sm font-bold mb-6 block">04 &mdash; Engineering Verification</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Production Hardened.</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-tm-border-glass">
+            
+            <!-- Metric 1 -->
+            <div class="py-4 md:py-0">
+               <div class="text-4xl md:text-5xl font-mono font-bold text-tm-active-green mb-2 flex items-center justify-center">
+                  <span class="metric-counter" data-target="141">0</span>
+               </div>
+               <p class="text-tm-sapphire-light text-sm uppercase tracking-widest">Automated Tests Passing</p>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="py-4 md:py-0">
+               <div class="text-4xl md:text-5xl font-mono font-bold text-white mb-2">60<span class="text-2xl text-white/50">fps</span></div>
+               <p class="text-tm-sapphire-light text-sm uppercase tracking-widest">UI Render Performance</p>
+            </div>
+
+            <!-- Metric 3 -->
+            <div class="py-4 md:py-0">
+               <div class="text-4xl md:text-5xl font-mono font-bold text-tm-gold mb-2">0</div>
+               <p class="text-tm-sapphire-light text-sm uppercase tracking-widest">Passive Background Tracking</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Chapter 05: Footer -->
+      <footer id="chapter-05" class="tm-chapter border-t border-tm-border-glass py-12 mt-12 relative z-10 bg-tm-color-deep-void/80 backdrop-blur-xl">
+         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <div class="text-center md:text-left">
+               <h2 class="text-2xl font-bold text-tm-gold tracking-widest uppercase mb-1">TrackMate</h2>
+               <p class="text-tm-sapphire-light text-sm">Privacy-First Geospatial Telemetry.</p>
+            </div>
+            
+            <!-- Call to Action -->
+            <div>
+               <button class="px-8 py-3 bg-gradient-to-r from-tm-gold-highlight to-tm-gold text-tm-color-deep-void font-bold rounded-full hover:shadow-[0_0_20px_rgba(255,179,0,0.4)] hover:scale-105 transition-all duration-300">
+                  View Source on GitHub
+               </button>
+            </div>
+
+            <div class="text-center md:text-right">
+               <p class="text-white font-medium mb-1">Engineered by Akhil Jojo</p>
+               <p class="text-tm-sapphire-light text-xs font-mono">BCA Full Stack AI Development &bull; Kochi</p>
+            </div>
+            
+         </div>
+      </footer>
+
+    </div>
+  </main>
+
+</body>
+</html>

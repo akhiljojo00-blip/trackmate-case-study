@@ -1,0 +1,23 @@
+/* Color Utilities */
+.text-gold { color: var(--tm-color-gold); }
+.text-gold-highlight { color: var(--tm-color-gold-highlight); }
+.text-sapphire { color: var(--tm-color-sapphire); }
+.text-sapphire-light { color: var(--tm-color-sapphire-light); }
+.text-active { color: var(--tm-color-active-green); }
+.text-warning { color: var(--tm-color-warning-amber); }
+.text-emergency { color: var(--tm-color-emergency-crimson); }
+
+/* Background Utilities */
+.bg-deep-void { background-color: var(--tm-color-deep-void); }
+.bg-midnight-glass { 
+  background-color: var(--tm-color-midnight-glass); 
+  backdrop-filter: blur(10px);
+}
+
+/* Border & Shadow Utilities */
+.border-glass { border: var(--tm-border-glass); }
+.shadow-glass { box-shadow: var(--tm-shadow-glass); }
+
+/* Typography Utilities */
+.font-main { font-family: var(--tm-font-main); }
+.font-mono { font-family: var(--tm-font-mono); }

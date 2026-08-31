@@ -1,0 +1,24 @@
+:root {
+  /* 1. Base Void & Glass */
+  --tm-color-deep-void: #070D18;
+  --tm-color-midnight-glass: rgba(15, 27, 43, 0.4); /* Transparent Midnight Glass */
+  --tm-border-glass: 1px solid rgba(100, 181, 246, 0.15); /* Glass Border */
+
+  /* 2. Core Identity */
+  --tm-color-gold: #FFB300;
+  --tm-color-gold-highlight: #FFD54F;
+
+  /* 3. Technology / Normal Status */
+  --tm-color-sapphire: #1E88E5;
+  --tm-color-sapphire-light: #64B5F6;
+
+  /* 4. Semantic Status */
+  --tm-color-active-green: #00E676;
+  --tm-color-warning-amber: #FFA000;
+  --tm-color-emergency-crimson: #FF1744;
+
+  /* 5. Typography/Spacing (Premium Standards) */
+  --tm-font-main: "SF Pro Display", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+  --tm-font-mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --tm-shadow-glass: 0 16px 32px rgba(0, 0, 0, 0.6);
+}
