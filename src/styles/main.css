@@ -1,0 +1,114 @@
+:root {
+  /* 1. Base Void & Glass */
+  --tm-color-deep-void: #070D18;
+  --tm-color-midnight-glass: rgba(15, 27, 43, 0.4); /* Transparent Midnight Glass */
+  --tm-border-glass: 1px solid rgba(100, 181, 246, 0.15); /* Glass Border */
+  /* 2. Core Identity */
+  --tm-color-gold: #FFB300;
+  --tm-color-gold-highlight: #FFD54F;
+  /* 3. Technology / Normal Status */
+  --tm-color-sapphire: #1E88E5;
+  --tm-color-sapphire-light: #64B5F6;
+  /* 4. Semantic Status */
+  --tm-color-active-green: #00E676;
+  --tm-color-warning-amber: #FFA000;
+  --tm-color-emergency-crimson: #FF1744;
+  /* 5. Typography/Spacing (Premium Standards) */
+  --tm-font-main: "SF Pro Display", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+  --tm-font-mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --tm-shadow-glass: 0 16px 32px rgba(0, 0, 0, 0.6);
+}
+
+body {
+  font-family: var(--tm-font-main);
+  background-color: var(--tm-color-deep-void);
+  color: #FFFFFF;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--tm-font-main);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.85); /* Slightly muted for better readability on dark background */
+}
+
+a {
+  color: var(--tm-color-sapphire-light);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--tm-color-gold);
+}
+
+code, pre {
+  font-family: var(--tm-font-mono);
+}
+
+/* Color Utilities */
+.text-gold {
+  color: var(--tm-color-gold);
+}
+
+.text-gold-highlight {
+  color: var(--tm-color-gold-highlight);
+}
+
+.text-sapphire {
+  color: var(--tm-color-sapphire);
+}
+
+.text-sapphire-light {
+  color: var(--tm-color-sapphire-light);
+}
+
+.text-active {
+  color: var(--tm-color-active-green);
+}
+
+.text-warning {
+  color: var(--tm-color-warning-amber);
+}
+
+.text-emergency {
+  color: var(--tm-color-emergency-crimson);
+}
+
+/* Background Utilities */
+.bg-deep-void {
+  background-color: var(--tm-color-deep-void);
+}
+
+.bg-midnight-glass {
+  background-color: var(--tm-color-midnight-glass);
+  backdrop-filter: blur(10px);
+}
+
+/* Border & Shadow Utilities */
+.border-glass {
+  border: var(--tm-border-glass);
+}
+
+.shadow-glass {
+  box-shadow: var(--tm-shadow-glass);
+}
+
+/* Typography Utilities */
+.font-main {
+  font-family: var(--tm-font-main);
+}
+
+.font-mono {
+  font-family: var(--tm-font-mono);
+}
+
+/*# sourceMappingURL=main.css.map */
