@@ -42,6 +42,8 @@
           <h1 class="text-tm-gold font-bold uppercase tracking-widest text-4xl md:text-6xl mb-4">TrackMate</h1>
           <p class="text-tm-sapphire-light text-lg md:text-xl font-medium tracking-wide mb-12">Intentional, Consent-Driven Location Sharing.</p>
           
+          <img src="./src/assets/images/interface.jpeg" alt="TrackMate Splash Screen" class="app-screenshot mx-auto max-w-[250px] mb-8">
+
           <div class="scroll-indicator animate-bounce text-tm-sapphire-light opacity-70">
             <span class="block text-xs uppercase tracking-[0.2em] mb-2">Explore the Architecture</span>
             <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
@@ -103,7 +105,8 @@
         <div class="text-center mb-16 ch2-header opacity-0">
           <span class="text-tm-sapphire-light uppercase tracking-widest text-sm font-bold mb-2 block">02 &mdash; Security Architecture</span>
           <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Connection <span class="text-tm-emergency-crimson opacity-80">≠</span> Permission</h2>
-          <p class="text-white/70 max-w-2xl mx-auto">In TrackMate, being friends or joining a group does not grant location access. The social layer is structurally isolated from the telemetry layer.</p>
+          <p class="text-white/70 max-w-2xl mx-auto mb-8">In TrackMate, being friends or joining a group does not grant location access. The social layer is structurally isolated from the telemetry layer.</p>
+          <img src="./src/assets/images/map.jpeg" alt="Live Consent Map" class="app-screenshot mx-auto max-w-[250px]">
         </div>
 
         <!-- 3D Isometric Container -->
@@ -182,20 +185,22 @@
                   <span class="text-tm-emergency-crimson font-bold text-xl tracking-widest">SOS</span>
                </div>
                <h3 class="text-xl font-bold text-white mb-2">3-Second Hold</h3>
-               <p class="text-white/60 text-sm">Heavy haptic gated activation to prevent pocket misfires.</p>
+               <p class="text-white/60 text-sm mb-4">Heavy haptic gated activation to prevent pocket misfires.</p>
+               <img src="./src/assets/images/side bar1.jpeg" alt="Sidebar Settings" class="app-screenshot w-full max-w-[200px]">
              </div>
           </div>
 
           <!-- Cell 3: Private Chat -->
           <div class="bento-item tm-glass-card p-8 group relative overflow-hidden min-h-[300px] opacity-0 translate-y-12">
-            <div class="h-full flex flex-col relative z-10">
+            <div class="h-full flex flex-col relative z-10 items-center text-center">
                <h3 class="text-xl font-bold text-tm-sapphire-light mb-2">Private Messaging</h3>
                <p class="text-white/60 text-sm mb-6">Firebase-authenticated, 60FPS optimized local chat.</p>
                <!-- Mock Bubbles -->
-               <div class="flex-1 flex flex-col justify-end gap-3">
+               <div class="w-full flex flex-col justify-end gap-3 mb-6">
                   <div class="self-start bg-tm-color-deep-void border border-tm-border-glass px-4 py-2 rounded-2xl rounded-tl-none text-sm text-white/80 transform origin-bottom-left transition-transform duration-300 group-hover:scale-105">Are you close?</div>
                   <div class="self-end bg-tm-sapphire text-white px-4 py-2 rounded-2xl rounded-tr-none text-sm shadow-[0_0_15px_rgba(30,136,229,0.3)] transform origin-bottom-right transition-transform duration-300 group-hover:scale-105">Just entered the Safe Zone.</div>
                </div>
+               <img src="./src/assets/images/side bar2.jpeg" alt="Safe Zones" class="app-screenshot w-full max-w-[200px]">
             </div>
           </div>
 
@@ -250,6 +255,10 @@
                <p class="text-tm-sapphire-light text-sm uppercase tracking-widest">Passive Background Tracking</p>
             </div>
 
+          </div>
+          
+          <div class="mt-12 flex justify-center">
+            <img src="./src/assets/images/profile.jpeg" alt="User Profile" class="app-screenshot w-full max-w-[300px]">
           </div>
         </div>
       </section>
